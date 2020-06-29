@@ -25,8 +25,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2014090900;
+$plugin->version = 2020062900;
 $plugin->requires = 2014050800;
 $plugin->component = 'atto_mediagallery';
-$plugin->release = '2.7.0.0';
+$plugin->release = '2.7.1';
 $plugin->dependencies = array('mod_mediagallery' => 2014082501);

@@ -15,18 +15,30 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'atto_mediagallery', language 'en'.
+ * Privacy Subsystem implementation for block_activity_modules.
  *
  * @package    atto_mediagallery
- * @copyright  2014 NetSpot Pty Ltd
- * @author     Adam Olley <adam.olley@netspot.com.au>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['gallery'] = 'Gallery';
-$string['insertgallery'] = 'Insert Media gallery';
-$string['nogalleries'] = 'Sorry, no galleries found to insert.';
-$string['pluginname'] = 'Media gallery';
-$string['privacy:metadata'] = 'The atto_mediagallery plugin does not store any personal data.';
-$string['select_desc'] = 'Select the gallery you want to insert below. Note, users may not be able to see the gallery if any of its visiblity options and/or the users permissions prevent them from seeing it.';
-$string['title'] = 'Select a Media gallery';
+namespace atto_mediagallery\privacy;
+
+defined('MOODLE_INTERNAL') || die();
+
+/**
+ * Privacy Subsystem for atto_mediagallery implementing null_provider.
+ *
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class provider implements \core_privacy\local\metadata\null_provider {
+
+    /**
+     * Get the language string identifier with the component's language
+     * file to explain why this plugin stores no data.
+     *
+     * @return  string
+     */
+    public static function get_reason() : string {
+        return 'privacy:metadata';
+    }
+}
